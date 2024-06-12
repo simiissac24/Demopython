@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container mt-5">
+    <h2>Add Movie</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Enter your Movie Name" required>
+        </div>
+        <div class="form-group">
+            <label for="desc">Description</label>
+            <input type="text" class="form-control" name="desc" placeholder="Enter your Movie Description" required>
+        </div>
+        <div class="form-group">
+            <label for="year">Year</label>
+            <input type="number" class="form-control" name="year" placeholder="Enter your Movie Year" required>
+        </div>
+        <div class="form-group">
+            <label for="img">Image</label>
+            <input type="file" class="form-control-file" name="img" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Movie</button>
+    </form>
+</div>
+{% endblock %}
